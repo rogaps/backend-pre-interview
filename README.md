@@ -1,154 +1,73 @@
-# Hedersgåva
-Python software engineer pre-interview repository. Please [fork][fork_from_github] this repository to your own GitHub accounts. You can create one using this [link][create_account].
+# Software Engineer pre-interview question
 
-## Targets
+Please [fork][forkFromGithub] this repository to your own GitHub accounts. You can create one using this [link][createAccount].
 
-  1. Provide an API for **client** to push data to this *server*
-  2. The server need to **handle** a lot of data input in *10 seconds*
-  3. The API should accept **XML** format only
-  4. Format the data to **time based data structure** and store it into a **database**(any of your choice)
-  5. Provide an API to let **client** fetch the reformatted data by time(**timestamps** or **datetime**)
+## Background
+
+Su Doku (Japanese meaning number place) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+
+```txt
+# question
+0 0 3|0 2 0|6 0 0
+9 0 0|3 0 5|0 0 1
+0 0 1|8 0 6|4 0 0
+-----------------
+0 0 8|1 0 2|9 0 0
+7 0 0|0 0 0|0 0 8
+0 0 6|7 0 8|2 0 0
+-----------------
+0 0 2|6 0 9|5 0 0
+8 0 0|2 0 3|0 0 9
+0 0 5|0 1 0|3 0 0
+
+# solution
+4 8 3|9 2 1|6 5 7
+9 6 7|3 4 5|8 2 1
+2 5 1|8 7 6|4 9 3
+-----------------
+5 4 8|1 3 2|9 7 6
+7 2 9|5 6 4|1 3 8
+1 3 6|7 9 8|2 4 5
+-----------------
+3 7 2|6 8 9|5 1 4
+8 1 4|2 5 3|7 6 9
+6 9 5|4 1 7|3 8 2
+```
+
+A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+
+## Target
+
+The 6K text file, [sudoku.txt][sudokuFile], contains fifty different Su Doku puzzles ranging in difficulty, but all with unique solutions (the first puzzle in the file is the example above).
+
+By solving all fifty puzzles find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
 
 ### Requirements
 
-#### 1. URLs
+#### Language
 
-  * API to **receive** the data => POST -- `/data`
-  * API to **display** the data => GET -- `/data/<id>`
-  
-#### 2. Request data format
- 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<root>
-   <data>
-      <element>
-         <device>SGD-12344</device>
-         <value>1234.266</value>
-      </element>
-      <element>
-         <device>SGB-11233</device>
-         <value>60</value>
-      </element>
-      <element>
-         <device>SCC-525</device>
-         <value>220</value>
-      </element>
-      <element>
-         <device>SGC-1552</device>
-         <value>5266.66</value>
-      </element>
-      <element>
-         <device>SGB-11233</device>
-         <value>440</value>
-      </element>
-      <element>
-         <device>G3112</device>
-         <value>32.266</value>
-      </element>
-      <element>
-         <device>SGD-12344</device>
-         <value>1234.266</value>
-      </element>
-   </data>
-   <devices>
-      <G3112>Temperature Sensor</G3112>
-      <SCC-525>Voltage Meter</SCC-525>
-      <SGB-11233>Current Meter</SGB-11233>
-      <SGC-1552>Power Meter</SGC-1552>
-      <SGD-12344>Power Meter</SGD-12344>
-   </devices>
-   <id>2314</id>
-   <record_time>1008910273</record_time>
-</root>
-```
+You can choose from [Golang][golangSite], [Rust][rustSite] or [JavaScript][jsSite].
 
-#### 3. Response data format
- 
-```json
-[
-    {
-        "datetime": "2018-08-17T19:00:00+08:00",
-        "value": 1274.034,
-        "unit": "V"
-    },
-    {
-        "datetime": "2018-08-17T19:00:10+08:00",
-        "value": 25.253,
-        "unit": "A"
-    },
-    {
-        "datetime": "2018-08-17T19:00:20+08:00",
-        "unit": "°C",
-        "value": 14.0524,
-    }
-]
-```
+#### Golang
 
-## Getting Started
+Please use [golangci-lint][golangciLint] for linting. The program should be able to run without CGO.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+#### JavaScript
 
-### Prerequisites
+Please use ESLint for linting. Either [NodeJS][jsSite], [TypeScript][tsSite] or [CoffeeScript][coffeeSite] is acceptable.
 
-You will need to install [pipenv] and [pyenv] before you start using this repo.
-
-### Installing
-
-First install the dependences via pipenv
-
-```shell
-pipenv install
-```
-
-![Installing dependences via pipenv][instal_via_pipenv]
-
-If you want to install any dependence from PyPi, then you should run the following
-
-```shell
-pipenv install <package_name>
-```
-
-After you installed the packages, you can use this to active the virtual environment.
-
-```shell
-pipenv shell
-```
-
-## Running the tests
-
-### Unit test
-
-We use pytest as our unit test framework. Run the following command to do the test.
-
-```shell
-pipenv run pytest hedersgava
-```
-
-### Coding style tests
-
-Please follow the PEP8 standard as your basic coding style. But use 100 as your line length. And run the following command to do code style test.
-
-```shell
-pipenv run pylint hedersgava/hedersgava
-```
-
-## Built With
-
-* [Django](https://www.djangoproject.com/) - The web framework used
-* [Django REST framework](http://www.django-rest-framework.org/) - The web RESTful framework
-* [Hypothesis](https://hypothesis.readthedocs.io/en/latest/) - Property based testing library
-* [PyTest](https://docs.pytest.org/en/latest/) - Python unit test tools
+> ES6 is preferred.
 
 ## Authors
 
-* **Linnovs** - *Initial work* - [linnovs47](https://github.com/linnovs47)
-* **Andy** - *Initial work* - [EntrakAndyLam](https://github.com/EntrakAndyLam)
+* **Linnovs** - *Initial work* - [linnovs](https://github.com/linnovs)
 
-See also the list of [contributors](https://github.com/en-trak/backend-pre-interview/contributors) who participated in this project.
-
-[pipenv]:https://docs.pipenv.org/
-[pyenv]:https://github.com/pyenv/pyenv
-[instal_via_pipenv]:images/install_via_pipenv.svg
-[fork_from_github]:https://github.com/en-trak/backend-pre-interview/fork
-[create_account]:https://github.com/join
+[forkFromGithub]:https://github.com/en-trak/backend-pre-interview/fork
+[createAccount]:https://github.com/join
+[golangSite]:https://golang.org
+[golangciLint]:https://github.com/golangci/golangci-lint
+[rustSite]:https://www.rust-lang.org
+[jsSite]:https://nodejs.org
+[tsSite]:https://typescriptlang.org
+[tsSite]:https://coffeescript.org
+[sudokuFile]:sudoku.txt
