@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "eslint": "^7.0.0"
+  },
+  "name": "backend-pre-interview",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:en-trak/backend-pre-interview.git",
+  "author": "Linnovs Liu <7882261+linnovs@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "eslintConfig": {
+      "plugins": [
+          "prettier"
+      ],
+      "rules": {
+          "prettier/prettier": "error"
+      },
+      "extends": [
+          "eslint:recommended",
+          "plugins:prettier/recommended"
+      ],
+      "parserOptions": {
+          "sourceType": "module"
+      },
+      "env": {
+          "node": true,
+          "es6": true,
+          "es2020": true
+      }
+  }
+}

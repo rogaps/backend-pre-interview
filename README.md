@@ -52,11 +52,16 @@ You can choose from [Golang][golangSite], [Rust][rustSite] or [JavaScript][jsSit
 
 Please use [golangci-lint][golangciLint] for linting. The program should be able to run without CGO.
 
+This repo already contains the configuration file for golangci-lint.
+
 #### JavaScript
 
-Please use ESLint for linting. Either [NodeJS][jsSite], [TypeScript][tsSite] or [CoffeeScript][coffeeSite] is acceptable.
+Please use [ESLint][eslintSite] for linting. Either [NodeJS][jsSite] or [TypeScript][tsSite] is acceptable.
 
-> ES6 is preferred.
+This repo already contains the configuration file for ESLint.
+
+> *PS.* ES6 is preferred.
+> *PS2.* Don't use **NPM** for package manager, use [YARN][yarnSite] instead
 
 ## Authors
 
@@ -66,8 +71,10 @@ Please use ESLint for linting. Either [NodeJS][jsSite], [TypeScript][tsSite] or 
 [createAccount]:https://github.com/join
 [golangSite]:https://golang.org
 [golangciLint]:https://github.com/golangci/golangci-lint
+[eslintSite]:https://eslint.org
+[yarnSite]:https://classic.yarnpkg.com/lang/en/
 [rustSite]:https://www.rust-lang.org
 [jsSite]:https://nodejs.org
 [tsSite]:https://typescriptlang.org
-[tsSite]:https://coffeescript.org
+[coffeeSite]:https://coffeescript.org
 [sudokuFile]:sudoku.txt
