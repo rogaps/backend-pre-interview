@@ -46,7 +46,7 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 
 #### Language
 
-You can choose from [Golang][golangSite], [Rust][rustSite] or [JavaScript][jsSite].
+You can choose from [Golang][golangSite], or [JavaScript][jsSite].
 
 #### Golang
 
@@ -73,7 +73,6 @@ This repo already contains the configuration file for ESLint.
 [golangciLint]:https://github.com/golangci/golangci-lint
 [eslintSite]:https://eslint.org
 [yarnSite]:https://classic.yarnpkg.com/lang/en/
-[rustSite]:https://www.rust-lang.org
 [jsSite]:https://nodejs.org
 [tsSite]:https://typescriptlang.org
 [coffeeSite]:https://coffeescript.org
