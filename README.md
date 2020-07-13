@@ -44,9 +44,13 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 
 ### Requirements
 
+Please read this document carefully and follow the instrucitons above and the language specific requirements below.
+
+You should provide enough instructions for the reviewer to build and run your works.
+
 #### Language
 
-You can choose from [Golang][golangSite], or [JavaScript][jsSite].
+You can choose from [Golang][golangSite], [JavaScript][jsSite], or Python.
 
 #### Golang
 
@@ -62,6 +66,10 @@ This repo already contains the configuration file for ESLint.
 
 > *PS.* ES6 is preferred.
 > *PS2.* Don't use **NPM** for package manager, use [YARN][yarnSite] instead
+
+#### Python
+
+This repo does not contains any configuration file for Python linting.
 
 ## Authors
 
