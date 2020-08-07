@@ -36,6 +36,10 @@ Su Doku (Japanese meaning number place) is the name given to a popular puzzle co
 
 A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
 
+
+> **It looks simple but do you really know how to do it right and efficiently, I really doubt.**
+
+
 ## Target
 
 The 6K text file, [sudoku.txt][sudokuFile], contains fifty different Su Doku puzzles ranging in difficulty, but all with unique solutions (the first puzzle in the file is the example above).
