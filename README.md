@@ -83,9 +83,28 @@ This repo already contains the configuration file for ESLint.
 
 This repo does not contains any configuration file for Python linting.
 
+## Usage
+
+After cloning the repository, build the code with below command:
+```
+go build ./main.go
+```
+
+Solve sudoku puzzle in a text file:
+```
+./main sudoku.txt
+```
+sudoku.txt should contains valid sudoku boards.
+
+Or using `go run`:
+```
+go run ./main.go sudoku.txt
+```
+
 ## Authors
 
 * **Linnovs** - *Initial work* - [linnovs](https://github.com/linnovs)
+* **Roga Pria Sembada** - *Sudoku solver* - [rogaps](https://github.com/rogaps)
 
 [forkFromGithub]:https://github.com/en-trak/backend-pre-interview/fork
 [createAccount]:https://github.com/join
